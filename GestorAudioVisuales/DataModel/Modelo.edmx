@@ -1,0 +1,987 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AudioVisualesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="IdTandaLabor" Type="int" Nullable="false" />
+          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="No_Serial" Type="int" Nullable="false" />
+          <Property Name="Service tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="IdTipoEquipo" Type="int" Nullable="false" />
+          <Property Name="IdMarca" Type="int" Nullable="false" />
+          <Property Name="IdModelo" Type="int" Nullable="false" />
+          <Property Name="IdTipoTecnologiaConexion" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoEstado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modelos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdMarca" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rentas">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+          </Key>
+          <Property Name="NoPrestamo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdEmpleado" Type="int" Nullable="false" />
+          <Property Name="IdEquipo" Type="int" Nullable="false" />
+          <Property Name="IdUsuario" Type="int" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="date" Nullable="false" />
+          <Property Name="FechaDevolucion" Type="date" Nullable="false" />
+          <Property Name="Comentario" Type="nvarchar" MaxLength="200" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TandasLabor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tanda" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Tecnologias_Conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TipoEstados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TipoPersonas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="No_Carnet" Type="int" Nullable="false" />
+          <Property Name="IdTipoUsuario" Type="int" Nullable="false" />
+          <Property Name="IdTipoPersona" Type="int" Nullable="false" />
+          <Property Name="Estado" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwEmpleados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwEmpleados">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="FechaIngreso" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="Tanda" Type="nvarchar" MaxLength="100" />
+          <Property Name="FechaIngreso" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTipoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TipoEquipo" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TipoEquipo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Empleados_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_TandasLabor">
+          <End Role="TandasLabor" Type="Self.TandasLabor" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TandasLabor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IdTandaLabor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_Modelos">
+          <End Role="Modelos" Type="Self.Modelos" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_Tecnologias_Conexion">
+          <End Role="Tecnologias_Conexion" Type="Self.Tecnologias_Conexion" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnologias_Conexion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdTipoTecnologiaConexion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_TipoEquipos">
+          <End Role="TipoEquipos" Type="Self.TipoEquipos" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEquipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdTipoEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estados_TipoEstados">
+          <End Role="TipoEstados" Type="Self.TipoEstados" Multiplicity="1" />
+          <End Role="Estados" Type="Self.Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEstados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="TipoEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marcas_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marcas">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelos_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Modelos" Type="Self.Modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Modelos">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelos_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="Modelos" Type="Self.Modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Modelos">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Equipos">
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AudioVisualesDBModelStoreContainer">
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipos" EntityType="Self.Equipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marcas" EntityType="Self.Marcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modelos" EntityType="Self.Modelos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rentas" EntityType="Self.Rentas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TandasLabor" EntityType="Self.TandasLabor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tecnologias_Conexion" EntityType="Self.Tecnologias_Conexion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoEquipos" EntityType="Self.TipoEquipos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoEstados" EntityType="Self.TipoEstados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoPersonas" EntityType="Self.TipoPersonas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwEmpleados" EntityType="Self.vwEmpleados" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwEmpleados].[Id] AS [Id], 
+    [vwEmpleados].[Nombre] AS [Nombre], 
+    [vwEmpleados].[Cedula] AS [Cedula], 
+    [vwEmpleados].[Tanda] AS [Tanda], 
+    [vwEmpleados].[FechaIngreso] AS [FechaIngreso], 
+    [vwEmpleados].[Descripcion] AS [Descripcion]
+    FROM [dbo].[vwEmpleados] AS [vwEmpleados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTipoEquipo" EntityType="Self.vwTipoEquipo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTipoEquipo].[Id] AS [Id], 
+    [vwTipoEquipo].[TipoEquipo] AS [TipoEquipo], 
+    [vwTipoEquipo].[Estado] AS [Estado]
+    FROM [dbo].[vwTipoEquipo] AS [vwTipoEquipo]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Empleados_Estados" Association="Self.FK_Empleados_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_TandasLabor" Association="Self.FK_Empleados_TandasLabor">
+            <End Role="TandasLabor" EntitySet="TandasLabor" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_Marcas" Association="Self.FK_Equipos_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_Modelos" Association="Self.FK_Equipos_Modelos">
+            <End Role="Modelos" EntitySet="Modelos" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_Tecnologias_Conexion" Association="Self.FK_Equipos_Tecnologias_Conexion">
+            <End Role="Tecnologias_Conexion" EntitySet="Tecnologias_Conexion" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_TipoEquipos" Association="Self.FK_Equipos_TipoEquipos">
+            <End Role="TipoEquipos" EntitySet="TipoEquipos" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estados_TipoEstados" Association="Self.FK_Estados_TipoEstados">
+            <End Role="TipoEstados" EntitySet="TipoEstados" />
+            <End Role="Estados" EntitySet="Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marcas_Estados" Association="Self.FK_Marcas_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Marcas" EntitySet="Marcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelos_Estados" Association="Self.FK_Modelos_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Modelos" EntitySet="Modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelos_Marcas" Association="Self.FK_Modelos_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="Modelos" EntitySet="Modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Empleados" Association="Self.FK_Rentas_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Equipos" Association="Self.FK_Rentas_Equipos">
+            <End Role="Equipos" EntitySet="Equipos" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Estados" Association="Self.FK_Rentas_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Usuarios" Association="Self.FK_Rentas_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AudioVisualesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IdTandaLabor" Type="Int32" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Empleados_Estados" FromRole="Empleados" ToRole="Estados" />
+          <NavigationProperty Name="TandasLabor" Relationship="Self.FK_Empleados_TandasLabor" FromRole="Empleados" ToRole="TandasLabor" />
+          <NavigationProperty Name="Rentas" Relationship="Self.FK_Rentas_Empleados" FromRole="Empleados" ToRole="Rentas" />
+        </EntityType>
+        <EntityType Name="Equipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="No_Serial" Type="Int32" Nullable="false" />
+          <Property Name="Service_tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IdTipoEquipo" Type="Int32" Nullable="false" />
+          <Property Name="IdMarca" Type="Int32" Nullable="false" />
+          <Property Name="IdModelo" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoTecnologiaConexion" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Marcas" Relationship="Self.FK_Equipos_Marcas" FromRole="Equipos" ToRole="Marcas" />
+          <NavigationProperty Name="Tecnologias_Conexion" Relationship="Self.FK_Equipos_Tecnologias_Conexion" FromRole="Equipos" ToRole="Tecnologias_Conexion" />
+          <NavigationProperty Name="TipoEquipos" Relationship="Self.FK_Equipos_TipoEquipos" FromRole="Equipos" ToRole="TipoEquipos" />
+          <NavigationProperty Name="Rentas" Relationship="Self.FK_Rentas_Equipos" FromRole="Equipos" ToRole="Rentas" />
+          <NavigationProperty Name="Modelos" Relationship="AudioVisualesDBModel.FK_Equipos_Modelos" FromRole="Equipos" ToRole="Modelos" />
+        </EntityType>
+        <EntityType Name="Estados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TipoEstado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_Estados" FromRole="Estados" ToRole="Empleados" />
+          <NavigationProperty Name="TipoEstados" Relationship="Self.FK_Estados_TipoEstados" FromRole="Estados" ToRole="TipoEstados" />
+          <NavigationProperty Name="Marcas" Relationship="Self.FK_Marcas_Estados" FromRole="Estados" ToRole="Marcas" />
+          <NavigationProperty Name="Rentas" Relationship="Self.FK_Rentas_Estados" FromRole="Estados" ToRole="Rentas" />
+          <NavigationProperty Name="Modelos" Relationship="AudioVisualesDBModel.FK_Modelos_Estados" FromRole="Estados" ToRole="Modelos" />
+        </EntityType>
+        <EntityType Name="Marcas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Equipos" Relationship="Self.FK_Equipos_Marcas" FromRole="Marcas" ToRole="Equipos" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Marcas_Estados" FromRole="Marcas" ToRole="Estados" />
+          <NavigationProperty Name="Modelos" Relationship="AudioVisualesDBModel.FK_Modelos_Marcas" FromRole="Marcas" ToRole="Modelos" />
+          </EntityType>
+        <EntityType Name="Rentas">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+          </Key>
+          <Property Name="NoPrestamo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+          <Property Name="IdEquipo" Type="Int32" Nullable="false" />
+          <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaDevolucion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Rentas_Empleados" FromRole="Rentas" ToRole="Empleados" />
+          <NavigationProperty Name="Equipos" Relationship="Self.FK_Rentas_Equipos" FromRole="Rentas" ToRole="Equipos" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Rentas_Estados" FromRole="Rentas" ToRole="Estados" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK_Rentas_Usuarios" FromRole="Rentas" ToRole="Usuarios" />
+        </EntityType>
+        <EntityType Name="TandasLabor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tanda" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Empleados" Relationship="Self.FK_Empleados_TandasLabor" FromRole="TandasLabor" ToRole="Empleados" />
+        </EntityType>
+        <EntityType Name="Tecnologias_Conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Equipos" Relationship="Self.FK_Equipos_Tecnologias_Conexion" FromRole="Tecnologias_Conexion" ToRole="Equipos" />
+        </EntityType>
+        <EntityType Name="TipoEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Equipos" Relationship="Self.FK_Equipos_TipoEquipos" FromRole="TipoEquipos" ToRole="Equipos" />
+        </EntityType>
+        <EntityType Name="TipoEstados">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Estados" Relationship="Self.FK_Estados_TipoEstados" FromRole="TipoEstados" ToRole="Estados" />
+        </EntityType>
+        <EntityType Name="TipoPersonas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Usuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cedula" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="No_Carnet" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoUsuario" Type="Int32" Nullable="false" />
+          <Property Name="IdTipoPersona" Type="Int32" Nullable="false" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Rentas" Relationship="Self.FK_Rentas_Usuarios" FromRole="Usuarios" ToRole="Rentas" />
+        </EntityType>
+        <EntityType Name="vwTipoEquipo">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="TipoEquipo" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TipoEquipo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Empleados_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Empleados_TandasLabor">
+          <End Role="TandasLabor" Type="Self.TandasLabor" Multiplicity="1" />
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TandasLabor">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Empleados">
+              <PropertyRef Name="IdTandaLabor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Empleados">
+          <End Role="Empleados" Type="Self.Empleados" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Empleados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdEmpleado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_Marcas">
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_Tecnologias_Conexion">
+          <End Role="Tecnologias_Conexion" Type="Self.Tecnologias_Conexion" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tecnologias_Conexion">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdTipoTecnologiaConexion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Equipos_TipoEquipos">
+          <End Role="TipoEquipos" Type="Self.TipoEquipos" Multiplicity="1" />
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEquipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdTipoEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Equipos">
+          <End Role="Equipos" Type="Self.Equipos" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Equipos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdEquipo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Estados_TipoEstados">
+          <End Role="TipoEstados" Type="Self.TipoEstados" Multiplicity="1" />
+          <End Role="Estados" Type="Self.Estados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoEstados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Estados">
+              <PropertyRef Name="TipoEstado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marcas_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Marcas" Type="Self.Marcas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Marcas">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Estados">
+          <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rentas_Usuarios">
+          <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+          <End Role="Rentas" Type="Self.Rentas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Usuarios">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rentas">
+              <PropertyRef Name="IdUsuario" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AudioVisualesDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Equipos" EntityType="Self.Equipos" />
+          <EntitySet Name="Estados" EntityType="Self.Estados" />
+          <EntitySet Name="Marcas" EntityType="Self.Marcas" />
+          <EntitySet Name="Rentas" EntityType="Self.Rentas" />
+          <EntitySet Name="TandasLabor" EntityType="Self.TandasLabor" />
+          <EntitySet Name="Tecnologias_Conexion" EntityType="Self.Tecnologias_Conexion" />
+          <EntitySet Name="TipoEquipos" EntityType="Self.TipoEquipos" />
+          <EntitySet Name="TipoEstados" EntityType="Self.TipoEstados" />
+          <EntitySet Name="TipoPersonas" EntityType="Self.TipoPersonas" />
+          <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+          <EntitySet Name="vwTipoEquipo" EntityType="Self.vwTipoEquipo" />
+          <AssociationSet Name="FK_Empleados_Estados" Association="Self.FK_Empleados_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Empleados_TandasLabor" Association="Self.FK_Empleados_TandasLabor">
+            <End Role="TandasLabor" EntitySet="TandasLabor" />
+            <End Role="Empleados" EntitySet="Empleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Empleados" Association="Self.FK_Rentas_Empleados">
+            <End Role="Empleados" EntitySet="Empleados" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_Marcas" Association="Self.FK_Equipos_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_Tecnologias_Conexion" Association="Self.FK_Equipos_Tecnologias_Conexion">
+            <End Role="Tecnologias_Conexion" EntitySet="Tecnologias_Conexion" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipos_TipoEquipos" Association="Self.FK_Equipos_TipoEquipos">
+            <End Role="TipoEquipos" EntitySet="TipoEquipos" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Equipos" Association="Self.FK_Rentas_Equipos">
+            <End Role="Equipos" EntitySet="Equipos" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Estados_TipoEstados" Association="Self.FK_Estados_TipoEstados">
+            <End Role="TipoEstados" EntitySet="TipoEstados" />
+            <End Role="Estados" EntitySet="Estados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marcas_Estados" Association="Self.FK_Marcas_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Marcas" EntitySet="Marcas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Estados" Association="Self.FK_Rentas_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rentas_Usuarios" Association="Self.FK_Rentas_Usuarios">
+            <End Role="Usuarios" EntitySet="Usuarios" />
+            <End Role="Rentas" EntitySet="Rentas" />
+          </AssociationSet>
+          <EntitySet Name="vwEmpleados" EntityType="AudioVisualesDBModel.vwEmpleados" />
+          <EntitySet Name="Modelos" EntityType="AudioVisualesDBModel.Modelos" />
+          <AssociationSet Name="FK_Equipos_Modelos" Association="AudioVisualesDBModel.FK_Equipos_Modelos">
+            <End Role="Modelos" EntitySet="Modelos" />
+            <End Role="Equipos" EntitySet="Equipos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelos_Estados" Association="AudioVisualesDBModel.FK_Modelos_Estados">
+            <End Role="Estados" EntitySet="Estados" />
+            <End Role="Modelos" EntitySet="Modelos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelos_Marcas" Association="AudioVisualesDBModel.FK_Modelos_Marcas">
+            <End Role="Marcas" EntitySet="Marcas" />
+            <End Role="Modelos" EntitySet="Modelos" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="vwEmpleados">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="FechaIngreso" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="Tanda" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FechaIngreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Modelos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdMarca" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Equipos" Relationship="AudioVisualesDBModel.FK_Equipos_Modelos" FromRole="Modelos" ToRole="Equipos" />
+          <NavigationProperty Name="Estados" Relationship="AudioVisualesDBModel.FK_Modelos_Estados" FromRole="Modelos" ToRole="Estados" />
+          <NavigationProperty Name="Marcas" Relationship="AudioVisualesDBModel.FK_Modelos_Marcas" FromRole="Modelos" ToRole="Marcas" />
+        </EntityType>
+        <Association Name="FK_Equipos_Modelos">
+          <End Type="AudioVisualesDBModel.Modelos" Role="Modelos" Multiplicity="1" />
+          <End Type="AudioVisualesDBModel.Equipos" Role="Equipos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Equipos">
+              <PropertyRef Name="IdModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelos_Estados">
+          <End Type="AudioVisualesDBModel.Estados" Role="Estados" Multiplicity="1" />
+          <End Type="AudioVisualesDBModel.Modelos" Role="Modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Estados">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Modelos">
+              <PropertyRef Name="Estado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelos_Marcas">
+          <End Type="AudioVisualesDBModel.Marcas" Role="Marcas" Multiplicity="1" />
+          <End Type="AudioVisualesDBModel.Modelos" Role="Modelos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marcas">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Modelos">
+              <PropertyRef Name="IdMarca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AudioVisualesDBModelStoreContainer" CdmEntityContainer="AudioVisualesDBEntities">
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="IdTandaLabor" ColumnName="IdTandaLabor" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Equipos">
+              <MappingFragment StoreEntitySet="Equipos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="No_Serial" ColumnName="No_Serial" />
+                <ScalarProperty Name="Service_tag" ColumnName="Service tag" />
+                <ScalarProperty Name="IdTipoEquipo" ColumnName="IdTipoEquipo" />
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="IdModelo" ColumnName="IdModelo" />
+                <ScalarProperty Name="IdTipoTecnologiaConexion" ColumnName="IdTipoTecnologiaConexion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Estados">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Estados">
+              <MappingFragment StoreEntitySet="Estados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="TipoEstado" ColumnName="TipoEstado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marcas">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Marcas">
+              <MappingFragment StoreEntitySet="Marcas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rentas">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Rentas">
+              <MappingFragment StoreEntitySet="Rentas">
+                <ScalarProperty Name="NoPrestamo" ColumnName="NoPrestamo" />
+                <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+                <ScalarProperty Name="IdEquipo" ColumnName="IdEquipo" />
+                <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+                <ScalarProperty Name="FechaPrestamo" ColumnName="FechaPrestamo" />
+                <ScalarProperty Name="FechaDevolucion" ColumnName="FechaDevolucion" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TandasLabor">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.TandasLabor">
+              <MappingFragment StoreEntitySet="TandasLabor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tanda" ColumnName="Tanda" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tecnologias_Conexion">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Tecnologias_Conexion">
+              <MappingFragment StoreEntitySet="Tecnologias_Conexion">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoEquipos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.TipoEquipos">
+              <MappingFragment StoreEntitySet="TipoEquipos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoEstados">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.TipoEstados">
+              <MappingFragment StoreEntitySet="TipoEstados">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoPersonas">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.TipoPersonas">
+              <MappingFragment StoreEntitySet="TipoPersonas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Usuarios">
+              <MappingFragment StoreEntitySet="Usuarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="No_Carnet" ColumnName="No_Carnet" />
+                <ScalarProperty Name="IdTipoUsuario" ColumnName="IdTipoUsuario" />
+                <ScalarProperty Name="IdTipoPersona" ColumnName="IdTipoPersona" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTipoEquipo">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwTipoEquipo">
+              <MappingFragment StoreEntitySet="vwTipoEquipo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TipoEquipo" ColumnName="TipoEquipo" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwEmpleados">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwEmpleados">
+              <MappingFragment StoreEntitySet="vwEmpleados">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="Tanda" ColumnName="Tanda" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modelos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.Modelos">
+              <MappingFragment StoreEntitySet="Modelos">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ebfecf56e29e43dea33ddad25b1324e5" Name="Diagram1">
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Empleados" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Equipos" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Estados" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Marcas" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Rentas" Width="1.5" PointX="9.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.TandasLabor" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Tecnologias_Conexion" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.TipoEquipos" Width="1.5" PointX="5.25" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.TipoEstados" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.TipoPersonas" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Usuarios" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.vwTipoEquipo" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Empleados_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Empleados_TandasLabor" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Rentas_Empleados" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Equipos_Marcas" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Equipos_Tecnologias_Conexion" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Equipos_TipoEquipos" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Rentas_Equipos" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Estados_TipoEstados" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Marcas_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Rentas_Estados" ManuallyRouted="false" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Rentas_Usuarios" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.vwEmpleados" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="AudioVisualesDBModel.Modelos" Width="1.5" PointX="7.5" PointY="5.25" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Equipos_Modelos" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Modelos_Estados" />
+        <AssociationConnector Association="AudioVisualesDBModel.FK_Modelos_Marcas" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
