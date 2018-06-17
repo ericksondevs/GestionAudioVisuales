@@ -65,9 +65,10 @@
             this.LeftPanel.Controls.Add(this.btnUsuarios);
             this.LeftPanel.Controls.Add(this.btnEmpleados);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LeftPanel.Location = new System.Drawing.Point(20, 60);
+            this.LeftPanel.Location = new System.Drawing.Point(22, 75);
+            this.LeftPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LeftPanel.Name = "LeftPanel";
-            this.LeftPanel.Size = new System.Drawing.Size(249, 675);
+            this.LeftPanel.Size = new System.Drawing.Size(280, 844);
             this.LeftPanel.TabIndex = 0;
             // 
             // panel1
@@ -78,22 +79,24 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 73);
+            this.panel1.Size = new System.Drawing.Size(281, 91);
             this.panel1.TabIndex = 2;
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(69, 21);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(37, 27);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(156, 28);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(191, 32);
             this.bunifuCustomLabel1.TabIndex = 2;
             this.bunifuCustomLabel1.Text = "Visio System";
+            this.bunifuCustomLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnPrestamos
             // 
+            this.btnPrestamos.Active = true;
             this.btnPrestamos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnPrestamos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPrestamos.BorderRadius = 0;
@@ -114,14 +117,14 @@
             this.btnPrestamos.IconVisible = true;
             this.btnPrestamos.IconZoom = 90D;
             this.btnPrestamos.IsTab = false;
-            this.btnPrestamos.Location = new System.Drawing.Point(0, 73);
+            this.btnPrestamos.Location = new System.Drawing.Point(0, 91);
             this.btnPrestamos.Margin = new System.Windows.Forms.Padding(0);
             this.btnPrestamos.Name = "btnPrestamos";
             this.btnPrestamos.Normalcolor = System.Drawing.Color.Empty;
             this.btnPrestamos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnPrestamos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnPrestamos.selected = true;
-            this.btnPrestamos.Size = new System.Drawing.Size(250, 54);
+            this.btnPrestamos.Size = new System.Drawing.Size(281, 68);
             this.btnPrestamos.TabIndex = 3;
             this.btnPrestamos.Text = "Préstamos y devoluciones";
             this.btnPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,6 +134,7 @@
             // 
             // btnEquipos
             // 
+            this.btnEquipos.Active = false;
             this.btnEquipos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnEquipos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnEquipos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -151,14 +155,14 @@
             this.btnEquipos.IconVisible = true;
             this.btnEquipos.IconZoom = 90D;
             this.btnEquipos.IsTab = false;
-            this.btnEquipos.Location = new System.Drawing.Point(0, 127);
+            this.btnEquipos.Location = new System.Drawing.Point(0, 159);
             this.btnEquipos.Margin = new System.Windows.Forms.Padding(0);
             this.btnEquipos.Name = "btnEquipos";
             this.btnEquipos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnEquipos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnEquipos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEquipos.selected = false;
-            this.btnEquipos.Size = new System.Drawing.Size(245, 54);
+            this.btnEquipos.Size = new System.Drawing.Size(276, 68);
             this.btnEquipos.TabIndex = 4;
             this.btnEquipos.Text = "Equipos";
             this.btnEquipos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -168,6 +172,7 @@
             // 
             // btnMarcas
             // 
+            this.btnMarcas.Active = false;
             this.btnMarcas.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnMarcas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnMarcas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -188,14 +193,14 @@
             this.btnMarcas.IconVisible = true;
             this.btnMarcas.IconZoom = 90D;
             this.btnMarcas.IsTab = false;
-            this.btnMarcas.Location = new System.Drawing.Point(0, 181);
+            this.btnMarcas.Location = new System.Drawing.Point(0, 227);
             this.btnMarcas.Margin = new System.Windows.Forms.Padding(0);
             this.btnMarcas.Name = "btnMarcas";
             this.btnMarcas.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnMarcas.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnMarcas.OnHoverTextColor = System.Drawing.Color.White;
             this.btnMarcas.selected = false;
-            this.btnMarcas.Size = new System.Drawing.Size(245, 54);
+            this.btnMarcas.Size = new System.Drawing.Size(276, 68);
             this.btnMarcas.TabIndex = 5;
             this.btnMarcas.Text = "Marcas";
             this.btnMarcas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -205,6 +210,7 @@
             // 
             // btnModelos
             // 
+            this.btnModelos.Active = false;
             this.btnModelos.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnModelos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnModelos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -225,14 +231,14 @@
             this.btnModelos.IconVisible = true;
             this.btnModelos.IconZoom = 90D;
             this.btnModelos.IsTab = false;
-            this.btnModelos.Location = new System.Drawing.Point(0, 235);
+            this.btnModelos.Location = new System.Drawing.Point(0, 295);
             this.btnModelos.Margin = new System.Windows.Forms.Padding(0);
             this.btnModelos.Name = "btnModelos";
             this.btnModelos.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnModelos.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnModelos.OnHoverTextColor = System.Drawing.Color.White;
             this.btnModelos.selected = false;
-            this.btnModelos.Size = new System.Drawing.Size(245, 54);
+            this.btnModelos.Size = new System.Drawing.Size(276, 68);
             this.btnModelos.TabIndex = 6;
             this.btnModelos.Text = "Modelos";
             this.btnModelos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -242,6 +248,7 @@
             // 
             // btnTecno
             // 
+            this.btnTecno.Active = false;
             this.btnTecno.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnTecno.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnTecno.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -262,14 +269,14 @@
             this.btnTecno.IconVisible = true;
             this.btnTecno.IconZoom = 90D;
             this.btnTecno.IsTab = false;
-            this.btnTecno.Location = new System.Drawing.Point(0, 289);
+            this.btnTecno.Location = new System.Drawing.Point(0, 363);
             this.btnTecno.Margin = new System.Windows.Forms.Padding(0);
             this.btnTecno.Name = "btnTecno";
             this.btnTecno.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnTecno.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnTecno.OnHoverTextColor = System.Drawing.Color.White;
             this.btnTecno.selected = false;
-            this.btnTecno.Size = new System.Drawing.Size(245, 54);
+            this.btnTecno.Size = new System.Drawing.Size(276, 68);
             this.btnTecno.TabIndex = 7;
             this.btnTecno.Text = "Tecno. Conexión";
             this.btnTecno.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -279,6 +286,7 @@
             // 
             // btnUsuarios
             // 
+            this.btnUsuarios.Active = false;
             this.btnUsuarios.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnUsuarios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -299,14 +307,14 @@
             this.btnUsuarios.IconVisible = true;
             this.btnUsuarios.IconZoom = 90D;
             this.btnUsuarios.IsTab = false;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 343);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 431);
             this.btnUsuarios.Margin = new System.Windows.Forms.Padding(0);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnUsuarios.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnUsuarios.OnHoverTextColor = System.Drawing.Color.White;
             this.btnUsuarios.selected = false;
-            this.btnUsuarios.Size = new System.Drawing.Size(245, 54);
+            this.btnUsuarios.Size = new System.Drawing.Size(276, 68);
             this.btnUsuarios.TabIndex = 8;
             this.btnUsuarios.Text = "Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -316,6 +324,7 @@
             // 
             // btnEmpleados
             // 
+            this.btnEmpleados.Active = false;
             this.btnEmpleados.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnEmpleados.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -336,14 +345,14 @@
             this.btnEmpleados.IconVisible = true;
             this.btnEmpleados.IconZoom = 90D;
             this.btnEmpleados.IsTab = false;
-            this.btnEmpleados.Location = new System.Drawing.Point(0, 397);
+            this.btnEmpleados.Location = new System.Drawing.Point(0, 499);
             this.btnEmpleados.Margin = new System.Windows.Forms.Padding(0);
             this.btnEmpleados.Name = "btnEmpleados";
             this.btnEmpleados.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(77)))), ((int)(((byte)(146)))));
             this.btnEmpleados.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(82)))), ((int)(((byte)(186)))));
             this.btnEmpleados.OnHoverTextColor = System.Drawing.Color.White;
             this.btnEmpleados.selected = false;
-            this.btnEmpleados.Size = new System.Drawing.Size(245, 54);
+            this.btnEmpleados.Size = new System.Drawing.Size(276, 68);
             this.btnEmpleados.TabIndex = 9;
             this.btnEmpleados.Text = "Empleados";
             this.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -359,21 +368,21 @@
             this.TopPanel.Controls.Add(this.metroComboBox1);
             this.TopPanel.Controls.Add(this.lblTitulo);
             this.TopPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.TopPanel.Location = new System.Drawing.Point(269, 60);
+            this.TopPanel.Location = new System.Drawing.Point(302, 75);
             this.TopPanel.Margin = new System.Windows.Forms.Padding(0);
             this.TopPanel.Name = "TopPanel";
-            this.TopPanel.Size = new System.Drawing.Size(1105, 76);
+            this.TopPanel.Size = new System.Drawing.Size(1243, 94);
             this.TopPanel.TabIndex = 1;
             // 
             // bunifuCustomLabel4
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Black;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(863, 0);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(969, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(119, 30);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(136, 32);
             this.bunifuCustomLabel4.TabIndex = 8;
             this.bunifuCustomLabel4.Text = "Usuario 1";
             // 
@@ -381,24 +390,25 @@
             // 
             this.metroComboBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.ItemHeight = 23;
             this.metroComboBox1.Items.AddRange(new object[] {
             "Registrar",
             "Salir"});
-            this.metroComboBox1.Location = new System.Drawing.Point(982, 0);
+            this.metroComboBox1.Location = new System.Drawing.Point(1105, 0);
+            this.metroComboBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(121, 30);
+            this.metroComboBox1.Size = new System.Drawing.Size(136, 29);
             this.metroComboBox1.TabIndex = 7;
             this.metroComboBox1.UseSelectable = true;
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
-            this.lblTitulo.Location = new System.Drawing.Point(22, 24);
+            this.lblTitulo.Location = new System.Drawing.Point(25, 30);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(326, 30);
+            this.lblTitulo.Size = new System.Drawing.Size(350, 32);
             this.lblTitulo.TabIndex = 3;
             this.lblTitulo.Text = "Préstamos y Devoluciones";
             // 
@@ -409,30 +419,31 @@
             this.nuevoToolStripMenuItem,
             this.modificarToolStripMenuItem,
             this.listaDeEquiposToolStripMenuItem});
-            this.equipoToolStripMenuItem.Location = new System.Drawing.Point(269, 136);
+            this.equipoToolStripMenuItem.Location = new System.Drawing.Point(302, 169);
             this.equipoToolStripMenuItem.Name = "equipoToolStripMenuItem";
-            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(1105, 28);
+            this.equipoToolStripMenuItem.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.equipoToolStripMenuItem.Size = new System.Drawing.Size(1243, 33);
             this.equipoToolStripMenuItem.TabIndex = 3;
             this.equipoToolStripMenuItem.Text = "menuStrip1";
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(76, 29);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(85, 24);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(99, 29);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // listaDeEquiposToolStripMenuItem
             // 
             this.listaDeEquiposToolStripMenuItem.Name = "listaDeEquiposToolStripMenuItem";
-            this.listaDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.listaDeEquiposToolStripMenuItem.Size = new System.Drawing.Size(59, 29);
             this.listaDeEquiposToolStripMenuItem.Text = "Lista";
             this.listaDeEquiposToolStripMenuItem.Click += new System.EventHandler(this.listaDeEquiposToolStripMenuItem_Click);
             // 
@@ -440,23 +451,25 @@
             // 
             this.panelUserControl.BackColor = System.Drawing.Color.White;
             this.panelUserControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUserControl.Location = new System.Drawing.Point(269, 164);
+            this.panelUserControl.Location = new System.Drawing.Point(302, 202);
+            this.panelUserControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelUserControl.Name = "panelUserControl";
-            this.panelUserControl.Size = new System.Drawing.Size(1105, 571);
+            this.panelUserControl.Size = new System.Drawing.Size(1243, 717);
             this.panelUserControl.TabIndex = 4;
             // 
             // Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1379, 755);
+            this.ClientSize = new System.Drawing.Size(1551, 944);
             this.Controls.Add(this.panelUserControl);
             this.Controls.Add(this.equipoToolStripMenuItem);
             this.Controls.Add(this.TopPanel);
             this.Controls.Add(this.LeftPanel);
             this.MainMenuStrip = this.equipoToolStripMenuItem;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Principal";
-            this.Padding = new System.Windows.Forms.Padding(20, 60, 5, 20);
+            this.Padding = new System.Windows.Forms.Padding(22, 75, 6, 25);
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.Principal_Load);
             this.LeftPanel.ResumeLayout(false);
