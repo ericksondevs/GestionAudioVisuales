@@ -58,10 +58,9 @@ namespace DataModel.DAO.TandaLabor
 
         public void Submit()
         {
-            using (db)
-            {
+
                 db.SaveChanges();
-            }
+            
         }
     }
 }

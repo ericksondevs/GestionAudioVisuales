@@ -54,10 +54,15 @@
     <Compile Include="DAO\Estado\EstadoDAO.cs" />
     <Compile Include="DAO\Marca\MarcasDAO.CS" />
     <Compile Include="DAO\Modelo\ModeloDAO.cs" />
+    <Compile Include="DAO\Renta\RentaDAO.cs" />
+    <Compile Include="DAO\Seguridad\LoginDAO.cs" />
     <Compile Include="DAO\TandaLabor\TandaDAO.cs" />
     <Compile Include="DAO\TandaLabor\TandaLaborDAO.cs" />
     <Compile Include="DAO\TecnoConexion\TecnoConexionDAO.cs" />
     <Compile Include="DAO\TipoEquipo\TipoEquipoDAO.cs" />
+    <Compile Include="DAO\TipoPersona\TipoPersonaDAO.cs" />
+    <Compile Include="DAO\TipoUsuario\TipoUsuarioDAO.cs" />
+    <Compile Include="DAO\Usuario\UsuarioDAO.cs" />
     <Compile Include="Empleados.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -107,6 +112,9 @@
     <Compile Include="TipoPersonas.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="TipoUsuarios.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Usuarios.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -114,7 +122,31 @@
     <Compile Include="vwEmpleados.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="vwEquipos.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwEstados.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwMarcas.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwModelos.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwRentas.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwTecnologias_Conexion.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
     <Compile Include="vwTipoEquipo.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwTipoEquipos.cs">
+      <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vwUsuarios.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
   </ItemGroup>

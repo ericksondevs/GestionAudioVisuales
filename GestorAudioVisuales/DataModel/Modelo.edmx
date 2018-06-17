@@ -105,6 +105,13 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="TipoUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Usuarios">
           <Key>
             <PropertyRef Name="Id" />
@@ -135,6 +142,106 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwEmpleados' does not have a p
           <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwEquipos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="No_Serial" />
+            <PropertyRef Name="Tipo de equipo" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="Marca" />
+            <PropertyRef Name="Tecnologia de conexion" />
+            <PropertyRef Name="Modelo" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="No_Serial" Type="int" Nullable="false" />
+          <Property Name="Service tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tipo de equipo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Tecnologia de conexion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Modelo" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwEstados' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwEstados">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tipo de Estado" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwMarcas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwModelos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwModelos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Marca" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwRentas' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwRentas">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+            <PropertyRef Name="FechaPrestamo" />
+            <PropertyRef Name="FechaDevolucion" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="No_Serial" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="No_Carnet" />
+            <PropertyRef Name="Nombre Empleado" />
+            <PropertyRef Name="Cedula Empleado" />
+            <PropertyRef Name="FechaIng. Empleado" />
+          </Key>
+          <Property Name="NoPrestamo" Type="int" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="date" Nullable="false" />
+          <Property Name="FechaDevolucion" Type="date" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="No_Serial" Type="int" Nullable="false" />
+          <Property Name="Service tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="No_Carnet" Type="int" Nullable="false" />
+          <Property Name="Nombre Empleado" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula Empleado" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="FechaIng. Empleado" Type="date" Nullable="false" />
+          <Property Name="Comentario Rentas" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwTecnologias_Conexion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTecnologias_Conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwTipoEquipo">
           <Key>
@@ -145,6 +252,33 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="TipoEquipo" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwTipoEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'AudioVisualesDB.dbo.vwUsuarios' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vwUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="No_Carnet" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Cedula" Type="nchar" MaxLength="11" Nullable="false" />
+          <Property Name="No_Carnet" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <Association Name="FK_Empleados_Estados">
           <End Role="Estados" Type="Self.Estados" Multiplicity="1" />
@@ -326,6 +460,7 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
           <EntitySet Name="TipoEquipos" EntityType="Self.TipoEquipos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoEstados" EntityType="Self.TipoEstados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TipoPersonas" EntityType="Self.TipoPersonas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoUsuarios" EntityType="Self.TipoUsuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vwEmpleados" EntityType="Self.vwEmpleados" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -337,12 +472,86 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
     [vwEmpleados].[Descripcion] AS [Descripcion]
     FROM [dbo].[vwEmpleados] AS [vwEmpleados]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="vwEquipos" EntityType="Self.vwEquipos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwEquipos].[Id] AS [Id], 
+    [vwEquipos].[Descripcion] AS [Descripcion], 
+    [vwEquipos].[No_Serial] AS [No_Serial], 
+    [vwEquipos].[Service tag] AS [Service tag], 
+    [vwEquipos].[Tipo de equipo] AS [Tipo de equipo], 
+    [vwEquipos].[Estado] AS [Estado], 
+    [vwEquipos].[Marca] AS [Marca], 
+    [vwEquipos].[Tecnologia de conexion] AS [Tecnologia de conexion], 
+    [vwEquipos].[Modelo] AS [Modelo]
+    FROM [dbo].[vwEquipos] AS [vwEquipos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwEstados" EntityType="Self.vwEstados" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwEstados].[Id] AS [Id], 
+    [vwEstados].[Descripcion] AS [Descripcion], 
+    [vwEstados].[Tipo de Estado] AS [Tipo de Estado]
+    FROM [dbo].[vwEstados] AS [vwEstados]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwMarcas" EntityType="Self.vwMarcas" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwMarcas].[Id] AS [Id], 
+    [vwMarcas].[Descripcion] AS [Descripcion], 
+    [vwMarcas].[Estado] AS [Estado]
+    FROM [dbo].[vwMarcas] AS [vwMarcas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwModelos" EntityType="Self.vwModelos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwModelos].[Id] AS [Id], 
+    [vwModelos].[Descripcion] AS [Descripcion], 
+    [vwModelos].[Marca] AS [Marca]
+    FROM [dbo].[vwModelos] AS [vwModelos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwRentas" EntityType="Self.vwRentas" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwRentas].[NoPrestamo] AS [NoPrestamo], 
+    [vwRentas].[FechaPrestamo] AS [FechaPrestamo], 
+    [vwRentas].[FechaDevolucion] AS [FechaDevolucion], 
+    [vwRentas].[Descripcion] AS [Descripcion], 
+    [vwRentas].[No_Serial] AS [No_Serial], 
+    [vwRentas].[Service tag] AS [Service tag], 
+    [vwRentas].[Nombre] AS [Nombre], 
+    [vwRentas].[Cedula] AS [Cedula], 
+    [vwRentas].[No_Carnet] AS [No_Carnet], 
+    [vwRentas].[Nombre Empleado] AS [Nombre Empleado], 
+    [vwRentas].[Cedula Empleado] AS [Cedula Empleado], 
+    [vwRentas].[FechaIng. Empleado] AS [FechaIng. Empleado], 
+    [vwRentas].[Comentario Rentas] AS [Comentario Rentas]
+    FROM [dbo].[vwRentas] AS [vwRentas]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTecnologias_Conexion" EntityType="Self.vwTecnologias_Conexion" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTecnologias_Conexion].[Id] AS [Id], 
+    [vwTecnologias_Conexion].[Descripcion] AS [Descripcion], 
+    [vwTecnologias_Conexion].[Estado] AS [Estado]
+    FROM [dbo].[vwTecnologias_Conexion] AS [vwTecnologias_Conexion]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="vwTipoEquipo" EntityType="Self.vwTipoEquipo" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vwTipoEquipo].[Id] AS [Id], 
     [vwTipoEquipo].[TipoEquipo] AS [TipoEquipo], 
     [vwTipoEquipo].[Estado] AS [Estado]
     FROM [dbo].[vwTipoEquipo] AS [vwTipoEquipo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwTipoEquipos" EntityType="Self.vwTipoEquipos" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwTipoEquipos].[Id] AS [Id], 
+    [vwTipoEquipos].[Descripcion] AS [Descripcion], 
+    [vwTipoEquipos].[Estado] AS [Estado]
+    FROM [dbo].[vwTipoEquipos] AS [vwTipoEquipos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwUsuarios" EntityType="Self.vwUsuarios" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vwUsuarios].[Id] AS [Id], 
+    [vwUsuarios].[Nombre] AS [Nombre], 
+    [vwUsuarios].[Cedula] AS [Cedula], 
+    [vwUsuarios].[No_Carnet] AS [No_Carnet], 
+    [vwUsuarios].[Descripcion] AS [Descripcion]
+    FROM [dbo].[vwUsuarios] AS [vwUsuarios]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_Empleados_Estados" Association="Self.FK_Empleados_Estados">
             <End Role="Estados" EntitySet="Estados" />
@@ -746,6 +955,15 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
             <End Role="Marcas" EntitySet="Marcas" />
             <End Role="Modelos" EntitySet="Modelos" />
           </AssociationSet>
+          <EntitySet Name="TipoUsuarios" EntityType="AudioVisualesDBModel.TipoUsuarios" />
+          <EntitySet Name="vwEquipos" EntityType="AudioVisualesDBModel.vwEquipos" />
+          <EntitySet Name="vwEstados" EntityType="AudioVisualesDBModel.vwEstados" />
+          <EntitySet Name="vwMarcas" EntityType="AudioVisualesDBModel.vwMarcas" />
+          <EntitySet Name="vwModelos" EntityType="AudioVisualesDBModel.vwModelos" />
+          <EntitySet Name="vwRentas" EntityType="AudioVisualesDBModel.vwRentas" />
+          <EntitySet Name="vwTecnologias_Conexion" EntityType="AudioVisualesDBModel.vwTecnologias_Conexion" />
+          <EntitySet Name="vwTipoEquipos" EntityType="AudioVisualesDBModel.vwTipoEquipos" />
+          <EntitySet Name="vwUsuarios" EntityType="AudioVisualesDBModel.vwUsuarios" />
         </EntityContainer>
         <EntityType Name="vwEmpleados">
           <Key>
@@ -810,6 +1028,124 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TipoUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vwEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="No_Serial" />
+            <PropertyRef Name="Tipo_de_equipo" />
+            <PropertyRef Name="Estado" />
+            <PropertyRef Name="Marca" />
+            <PropertyRef Name="Tecnologia_de_conexion" />
+            <PropertyRef Name="Modelo" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="No_Serial" Type="Int32" Nullable="false" />
+          <Property Name="Service_tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo_de_equipo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tecnologia_de_conexion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwEstados">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tipo_de_Estado" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwMarcas">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwModelos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Marca" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwRentas">
+          <Key>
+            <PropertyRef Name="NoPrestamo" />
+            <PropertyRef Name="FechaPrestamo" />
+            <PropertyRef Name="FechaDevolucion" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="No_Serial" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="No_Carnet" />
+            <PropertyRef Name="Nombre_Empleado" />
+            <PropertyRef Name="Cedula_Empleado" />
+            <PropertyRef Name="FechaIng__Empleado" />
+          </Key>
+          <Property Name="NoPrestamo" Type="Int32" Nullable="false" />
+          <Property Name="FechaPrestamo" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="FechaDevolucion" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="No_Serial" Type="Int32" Nullable="false" />
+          <Property Name="Service_tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="No_Carnet" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_Empleado" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula_Empleado" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="FechaIng__Empleado" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Comentario_Rentas" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwTecnologias_Conexion">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwTipoEquipos">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Descripcion" />
+            <PropertyRef Name="Estado" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="vwUsuarios">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Nombre" />
+            <PropertyRef Name="Cedula" />
+            <PropertyRef Name="No_Carnet" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Cedula" Type="String" Nullable="false" MaxLength="11" FixedLength="true" Unicode="true" />
+          <Property Name="No_Carnet" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -957,6 +1293,104 @@ warning 6002: The table/view 'AudioVisualesDB.dbo.vwTipoEquipo' does not have a 
                 <ScalarProperty Name="Estado" ColumnName="Estado" />
                 <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
                 <ScalarProperty Name="IdMarca" ColumnName="IdMarca" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoUsuarios">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.TipoUsuarios">
+              <MappingFragment StoreEntitySet="TipoUsuarios">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwEquipos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwEquipos">
+              <MappingFragment StoreEntitySet="vwEquipos">
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Tecnologia_de_conexion" ColumnName="Tecnologia de conexion" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Tipo_de_equipo" ColumnName="Tipo de equipo" />
+                <ScalarProperty Name="Service_tag" ColumnName="Service tag" />
+                <ScalarProperty Name="No_Serial" ColumnName="No_Serial" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwEstados">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwEstados">
+              <MappingFragment StoreEntitySet="vwEstados">
+                <ScalarProperty Name="Tipo_de_Estado" ColumnName="Tipo de Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwMarcas">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwMarcas">
+              <MappingFragment StoreEntitySet="vwMarcas">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwModelos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwModelos">
+              <MappingFragment StoreEntitySet="vwModelos">
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwRentas">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwRentas">
+              <MappingFragment StoreEntitySet="vwRentas">
+                <ScalarProperty Name="Comentario_Rentas" ColumnName="Comentario Rentas" />
+                <ScalarProperty Name="FechaIng__Empleado" ColumnName="FechaIng. Empleado" />
+                <ScalarProperty Name="Cedula_Empleado" ColumnName="Cedula Empleado" />
+                <ScalarProperty Name="Nombre_Empleado" ColumnName="Nombre Empleado" />
+                <ScalarProperty Name="No_Carnet" ColumnName="No_Carnet" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Service_tag" ColumnName="Service tag" />
+                <ScalarProperty Name="No_Serial" ColumnName="No_Serial" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="FechaDevolucion" ColumnName="FechaDevolucion" />
+                <ScalarProperty Name="FechaPrestamo" ColumnName="FechaPrestamo" />
+                <ScalarProperty Name="NoPrestamo" ColumnName="NoPrestamo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTecnologias_Conexion">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwTecnologias_Conexion">
+              <MappingFragment StoreEntitySet="vwTecnologias_Conexion">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwTipoEquipos">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwTipoEquipos">
+              <MappingFragment StoreEntitySet="vwTipoEquipos">
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vwUsuarios">
+            <EntityTypeMapping TypeName="AudioVisualesDBModel.vwUsuarios">
+              <MappingFragment StoreEntitySet="vwUsuarios">
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="No_Carnet" ColumnName="No_Carnet" />
+                <ScalarProperty Name="Cedula" ColumnName="Cedula" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

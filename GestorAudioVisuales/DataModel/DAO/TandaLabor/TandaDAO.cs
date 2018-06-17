@@ -16,42 +16,80 @@ namespace DataModel.DAO.TandaLabor
         }
         public List<TandasLabor> LoadTandas()
         {
-            return db.TandasLabor.ToList();
+            try
+            {
+                return db.TandasLabor.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public TandasLabor GetTanda(int id)
         {
-            return db.TandasLabor.Find(id);
+            try
+            {
+                return db.TandasLabor.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void InsertTandasLabor(TandasLabor tanda)
         {
-            db.TandasLabor.Add(tanda);
+            try
+            {
+                db.TandasLabor.Add(tanda);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void EditTandasLabor(TandasLabor tanda)
         {
-
-            var entity = db.TandasLabor.Find(tanda.Id);
-            if (entity == null)
+            try
             {
-                throw new ApplicationException("No se encontró");
+                var entity = db.TandasLabor.Find(tanda.Id);
+                if (entity == null)
+                {
+                    throw new ApplicationException("No se encontró");
+                }
+                db.Entry(entity).CurrentValues.SetValues(tanda);
             }
-            db.Entry(entity).CurrentValues.SetValues(tanda);
-
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void DeleteTandasLabor(int id)
         {
-
-            var entity = db.TandasLabor.Find(id);
-            db.Entry(entity).State = EntityState.Deleted;
+            try
+            {
+                var entity = db.TandasLabor.Find(id);
+                db.Entry(entity).State = EntityState.Deleted;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Submit()
         {
-            using (db)
+            try
             {
-                db.SaveChanges();
+              
+                    db.SaveChanges();
+               
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

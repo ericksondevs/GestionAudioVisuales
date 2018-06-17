@@ -26,6 +26,7 @@ namespace GestorAudioVisuales.Empleados
                 return _userCtrlListaEmpleados;
             }
         }
+
         public CtrlListaEmpleados()
         {
             InitializeComponent();
@@ -33,29 +34,47 @@ namespace GestorAudioVisuales.Empleados
 
         protected void CargarEmpleados()
         {
-            EmpleadoDAO dao = new EmpleadoDAO();
+            try
             {
-                gridEmpleados.DataSource = dao.LoadEmpleados();
+                EmpleadoDAO dao = new EmpleadoDAO();
+                {
+                    gridEmpleados.DataSource = dao.LoadEmpleados();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void CtrlListaEmpleados_Load(object sender, EventArgs e)
         {
-            CargarEmpleados();
-            CargarCriteriosBusqueda();
-
-
-          
+            try
+            {
+                CargarEmpleados();
+                CargarCriteriosBusqueda();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-     
+
         private void CargarCriteriosBusqueda()
         {
+            try { 
             EmpleadoDAO dao = new EmpleadoDAO();
             {
                 cbmCriterio.DataSource = dao.LoadCriteriosBusqueda();
                 cbmCriterio.DisplayMember = "Name";
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
+
         private void gridEmpleados_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(gridEmpleados.Rows[gridEmpleados.CurrentRow.Index].Cells[0].Value);

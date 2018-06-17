@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorAudioVisuales.Seguridad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace GestorAudioVisuales
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Principal());
+            Application.Run(new Login());
         }
     }
 }

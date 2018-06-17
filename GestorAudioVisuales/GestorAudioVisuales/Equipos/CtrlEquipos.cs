@@ -33,6 +33,7 @@ namespace GestorAudioVisuales.Equipos
                 return _userCtrlEquipo;
             }
         }
+
         public CtrlEquipos()
         {
             InitializeComponent();
@@ -40,14 +41,22 @@ namespace GestorAudioVisuales.Equipos
 
         private void CtrlEquipos_Load(object sender, EventArgs e)
         {
-            CargarMarcas();
-            CargarModelos();
-            CargarTecnoConexion();
-            CargarEstados();
-
-            if (IdEquipo != 0)
+            try
             {
-                LlenarCamposEquipo(IdEquipo);
+                CargarTipoEquipo();
+                CargarMarcas();
+                CargarModelos();
+                CargarTecnoConexion();
+                CargarEstados();
+
+                if (IdEquipo != 0)
+                {
+                    LlenarCamposEquipo(IdEquipo);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -91,16 +100,15 @@ namespace GestorAudioVisuales.Equipos
         {
             TipoEquipoDAO dao = new TipoEquipoDAO();
             var data = dao.LoadTipoEquipos();
-            cmbEstado.DataSource = data;
-            cmbEstado.DisplayMember = "Descripcion";
-            cmbEstado.ValueMember = "Id";
+            cmbTipoEquipo.DataSource = data;
+            cmbTipoEquipo.DisplayMember = "Descripcion";
+            cmbTipoEquipo.ValueMember = "Id";
         }
-
 
         private int ValidarCampos()
         {
             int flag = 0;
-            
+
             if (string.IsNullOrEmpty(cmbTipoEquipo.Text))
             {
                 cmbTipoEquipo.Focus();
@@ -208,12 +216,12 @@ namespace GestorAudioVisuales.Equipos
                 if (ValidarCampos() == 0)
                 {
                     DataModel.Equipos eq = new DataModel.Equipos();
-
+                    
                     eq.Descripcion = txtDescripcion.Text;
                     eq.Estado = Convert.ToInt32(cmbEstado.SelectedValue);
-                    eq.IdMarca = Convert.ToInt32(cmbModelo.SelectedValue);
+                    eq.IdMarca = Convert.ToInt32(cmbMarca.SelectedValue);
                     eq.IdModelo = Convert.ToInt32(cmbModelo.SelectedValue);
-                    eq.IdTipoEquipo = Convert.ToInt32(cmbEstado.SelectedValue);
+                    eq.IdTipoEquipo = Convert.ToInt32(cmbTipoEquipo.SelectedValue);
                     eq.IdTipoTecnologiaConexion = Convert.ToInt32(cmbConexion.SelectedValue);
                     eq.No_Serial = Convert.ToInt32(txtSerial.Text);
                     eq.Service_tag = txtServiceTag.Text;
@@ -281,38 +289,29 @@ namespace GestorAudioVisuales.Equipos
             LimpiarCampos();
         }
 
-        private void txtSerial_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-       (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
-
-            // only allow one decimal point
-            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-            if (string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
+            try
             {
-                txtId.Focus();
-                errorProvider1.SetError(txtId, MessageBox.Show("Debe seleccionar un equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
-                return;
+                if (string.IsNullOrEmpty(txtId.Text) && txtId.Text != "0")
+                {
+                    txtId.Focus();
+                    errorProvider1.SetError(txtId, MessageBox.Show("Debe seleccionar un equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error).ToString());
+                    return;
+                }
+                int id = Convert.ToInt32(txtId.Text);
+
+                EquipoDAO dao = new EquipoDAO();
+                {
+                    dao.DeleteEquipo(id);
+                    dao.Submit();
+                    MessageBox.Show("Registro eliminado exitosamente");
+                    LimpiarCampos();
+                }
             }
-            int id = Convert.ToInt32(txtId.Text);
-
-            EquipoDAO dao = new EquipoDAO();
+            catch (Exception ex)
             {
-                dao.DeleteEquipo(id);
-                dao.Submit();
-                MessageBox.Show("Registro eliminado exitosamente");
-                LimpiarCampos();
+                MessageBox.Show(ex.Message);
             }
         }
 

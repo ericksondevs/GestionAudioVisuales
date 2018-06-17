@@ -18,56 +18,93 @@ namespace DataModel.DAO.EstadosDAO
         }
         public List<Estados> LoadEstados(int TipoEstado)
         {
-
-            return db.Estados.Where(x=>x.TipoEstado == TipoEstado).ToList();
+            try
+            {
+                return db.Estados.Where(x => x.TipoEstado == TipoEstado).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
         public List<Estados> LoadEstados()
         {
-
-            return db.Estados.ToList();
-
+            try
+            {
+                return db.Estados.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
         public Estados LoadEstado(int id)
         {
-
-            return db.Estados.Find(id);
-
+            try
+            {
+                return db.Estados.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void InsertEstado(Estados estado)
         {
-
-            db.Estados.Add(estado);
-
+            try
+            {
+                db.Estados.Add(estado);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void EditEstado(Estados estado)
         {
-
-            var entity = db.Estados.Find(estado.Id);
-            if (entity == null)
+            try
             {
-                throw new ApplicationException("No se encontró");
+                var entity = db.Estados.Find(estado.Id);
+                if (entity == null)
+                {
+                    throw new ApplicationException("No se encontró");
+                }
+                db.Entry(entity).CurrentValues.SetValues(estado);
             }
-            db.Entry(entity).CurrentValues.SetValues(estado);
-
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void DeleteEstado(int id)
         {
-
-            var entity = db.Estados.Find(id);
-            db.Entry(entity).State = EntityState.Deleted;
-
+            try
+            {
+                var entity = db.Estados.Find(id);
+                db.Entry(entity).State = EntityState.Deleted;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Submit()
         {
-            using (db)
+            try
             {
-                db.SaveChanges();
+              
+                    db.SaveChanges();
+               
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

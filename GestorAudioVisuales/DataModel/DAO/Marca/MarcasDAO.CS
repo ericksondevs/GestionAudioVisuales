@@ -14,45 +14,111 @@ namespace DataModel.DAO.Marcas
         {
             db = new AudioVisualesDBEntities();
         }
-        public List<DataModel.Marcas> LoadMarcas()
+        public List<DataModel.vwMarcas> LoadMarcas()
         {
-            return db.Marcas.ToList();
+            try
+            {
+                return db.vwMarcas.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+
+        public List<vwEmpleados> LoadMarcas(string criterio, string parametro)
+        {
+            try
+            {
+                string query = "select * from vwMarcas where " + criterio + " LIKE '%" + parametro + "%'";
+                //var data = db.vwEmpleados.SqlQuery(query);
+                return new List<vwEmpleados>();
+                // return data.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public List<string> LoadCriteriosBusqueda()
+        {
+            try
+            {
+                var d = (from t in typeof(DataModel.Marcas).GetProperties() select t.Name).ToList();
+                return d;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public DataModel.Marcas GetMarca(int id)
         {
-            return db.Marcas.Find(id);
+            try
+            {
+                return db.Marcas.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void InsertMarca(DataModel.Marcas marca)
         {
-            db.Marcas.Add(marca);
+            try
+            {
+                db.Marcas.Add(marca);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void EditMarca(DataModel.Marcas marca)
         {
-
-            var entity = db.Marcas.Find(marca.Id);
-            if (entity == null)
+            try
             {
-                throw new ApplicationException("No se encontró");
+                var entity = db.Marcas.Find(marca.Id);
+                if (entity == null)
+                {
+                    throw new ApplicationException("No se encontró");
+                }
+                db.Entry(entity).CurrentValues.SetValues(marca);
             }
-            db.Entry(entity).CurrentValues.SetValues(marca);
-
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void DeleteMarca(int id)
         {
-
-            var entity = db.Marcas.Find(id);
-            db.Entry(entity).State = EntityState.Deleted;
-
+            try
+            {
+                var entity = db.Marcas.Find(id);
+                db.Entry(entity).State = EntityState.Deleted;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Submit()
         {
-            using (db)
+            try
             {
-                db.SaveChanges();
+              
+                    db.SaveChanges();
+               
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
     }

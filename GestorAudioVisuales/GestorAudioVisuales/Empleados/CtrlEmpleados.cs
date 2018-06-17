@@ -43,20 +43,28 @@ namespace GestorAudioVisuales.Empleados
                 LlenarCamposEmpleado(IdEmpleado);
             }
         }
+
         private void CtrlEmpleados_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtId.Text))
+            try
             {
-                // BtnEliminar.Enabled = false;
-                // BtnModificar.Enabled = false;
-            }
-            CargarEstados();
-            CargarTandas();
+                if (string.IsNullOrEmpty(txtId.Text))
+                {
+                    // BtnEliminar.Enabled = false;
+                    // BtnModificar.Enabled = false;
+                }
+                CargarEstados();
+                CargarTandas();
 
-            if (IdEmpleado != 0)
-            {
-                LlenarCamposEmpleado(IdEmpleado);
+                if (IdEmpleado != 0)
+                {
+                    LlenarCamposEmpleado(IdEmpleado);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            } 
         }
         private void CargarTandas()
         {

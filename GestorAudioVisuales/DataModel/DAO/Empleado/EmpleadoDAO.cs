@@ -18,79 +18,121 @@ namespace DataModel.DAO.Empleado
             db = new AudioVisualesDBEntities();
 
         }
+
         public List<string> LoadCriteriosBusqueda()
         {
-            var d = (from t in typeof(Empleados).GetProperties() select t.Name).ToList();
-            return d;
+            try
+            {
+                var d = (from t in typeof(Empleados).GetProperties() select t.Name).ToList();
+                return d;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<vwEmpleados> LoadEmpleados(string criterio, string parametro)
         {
-            string query = "select * from vwEmpleados where "+criterio+" LIKE '%" + parametro + "%'";
-           var  data = db.vwEmpleados.SqlQuery(query);
+            try
+            {
+                string query = "select * from vwEmpleados where " + criterio + " LIKE '%" + parametro + "%'";
+                var data = db.vwEmpleados.SqlQuery(query);
 
-            return data.ToList();
-
+                return data.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public List<vwEmpleados> LoadEmpleados()
         {
-
-            return db.vwEmpleados.ToList();
+            try
+            {
+                return db.vwEmpleados.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
         public Empleados LoadEmpleado(int id)
         {
-
-            return db.Empleados.Find(id);
+            try
+            {
+                return db.Empleados.Find(id);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
         public void InsertEmpleado(Empleados empleado)
         {
-
-            if (!db.Empleados.Any(x => x.Cedula == empleado.Cedula))
+            try
             {
-                db.Empleados.Add(empleado);
+                if (!db.Empleados.Any(x => x.Cedula == empleado.Cedula))
+                {
+                    db.Empleados.Add(empleado);
+                }
+                else
+                {
+                    throw new ApplicationException("Ya existe un empleado con esta cédula");
+                }
             }
-            else
+            catch (Exception)
             {
-                throw new ApplicationException("Ya existe un empleado con esta cédula");
+                throw;
             }
-
         }
 
         public void EditEmpleado(Empleados empleado)
         {
-
-            var entity = db.Empleados.Find(empleado.Id);
-            if (entity == null)
+            try
             {
-                throw new ApplicationException("No se encontró");
+                var entity = db.Empleados.Find(empleado.Id);
+                if (entity == null)
+                {
+                    throw new ApplicationException("No se encontró");
+                }
+                db.Entry(entity).CurrentValues.SetValues(empleado);
             }
-            db.Entry(entity).CurrentValues.SetValues(empleado);
-
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void DeleteEmpleado(int id)
         {
-            var entity = db.Empleados.Find(id);
-            if (entity == null)
+            try
             {
-                throw new ApplicationException("No se encontró");
+                var entity = db.Empleados.Find(id);
+                if (entity == null)
+                {
+                    throw new ApplicationException("No se encontró");
+                }
+                db.Entry(entity).State = EntityState.Deleted;
             }
-            db.Entry(entity).State = EntityState.Deleted;
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Submit()
         {
             try
             {
-                using (db)
-                {
+              
                     db.SaveChanges();
-                }
+              
             }
             catch (DbEntityValidationException e)
             {

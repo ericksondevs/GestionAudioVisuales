@@ -57,30 +57,31 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.ItemHeight = 24;
-            this.cmbEstado.Location = new System.Drawing.Point(230, 319);
+            this.cmbEstado.ItemHeight = 23;
+            this.cmbEstado.Location = new System.Drawing.Point(184, 259);
+            this.cmbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(236, 30);
+            this.cmbEstado.Size = new System.Drawing.Size(178, 29);
             this.cmbEstado.TabIndex = 35;
-            this.cmbEstado.UseSelectable = true;
             // 
             // cmbTanda
             // 
             this.cmbTanda.FormattingEnabled = true;
-            this.cmbTanda.ItemHeight = 24;
-            this.cmbTanda.Location = new System.Drawing.Point(229, 191);
+            this.cmbTanda.ItemHeight = 23;
+            this.cmbTanda.Location = new System.Drawing.Point(184, 155);
+            this.cmbTanda.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTanda.Name = "cmbTanda";
-            this.cmbTanda.Size = new System.Drawing.Size(308, 30);
+            this.cmbTanda.Size = new System.Drawing.Size(232, 29);
             this.cmbTanda.TabIndex = 32;
-            this.cmbTanda.UseSelectable = true;
             // 
             // bunifuCustomLabel6
             // 
             this.bunifuCustomLabel6.AutoSize = true;
             this.bunifuCustomLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(16, 254);
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(12, 206);
+            this.bunifuCustomLabel6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(207, 29);
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(164, 24);
             this.bunifuCustomLabel6.TabIndex = 30;
             this.bunifuCustomLabel6.Text = "Fecha de ingreso:";
             // 
@@ -88,9 +89,10 @@
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(16, 320);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(12, 260);
+            this.bunifuCustomLabel5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(94, 29);
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(73, 24);
             this.bunifuCustomLabel5.TabIndex = 29;
             this.bunifuCustomLabel5.Text = "Estado:";
             // 
@@ -98,9 +100,10 @@
             // 
             this.bunifuCustomLabel4.AutoSize = true;
             this.bunifuCustomLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(16, 192);
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(12, 156);
+            this.bunifuCustomLabel4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(88, 29);
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 24);
             this.bunifuCustomLabel4.TabIndex = 28;
             this.bunifuCustomLabel4.Text = "Tanda:";
             // 
@@ -108,9 +111,10 @@
             // 
             this.bunifuCustomLabel3.AutoSize = true;
             this.bunifuCustomLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(16, 123);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(12, 100);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(96, 29);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(75, 24);
             this.bunifuCustomLabel3.TabIndex = 27;
             this.bunifuCustomLabel3.Text = "Cédula:";
             // 
@@ -118,9 +122,10 @@
             // 
             this.bunifuCustomLabel2.AutoSize = true;
             this.bunifuCustomLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(16, 56);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(12, 46);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(107, 29);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(84, 24);
             this.bunifuCustomLabel2.TabIndex = 26;
             this.bunifuCustomLabel2.Text = "Nombre:";
             // 
@@ -131,9 +136,10 @@
             this.panel2.Controls.Add(this.BtnModificar);
             this.panel2.Controls.Add(this.btnAgregar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(674, 0);
+            this.panel2.Location = new System.Drawing.Point(506, 0);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 452);
+            this.panel2.Size = new System.Drawing.Size(150, 367);
             this.panel2.TabIndex = 39;
             // 
             // btnCancelar
@@ -155,10 +161,10 @@
             this.btnCancelar.IdleFillColor = System.Drawing.Color.White;
             this.btnCancelar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelar.Location = new System.Drawing.Point(0, 123);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnCancelar.Location = new System.Drawing.Point(0, 132);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(200, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(150, 44);
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -182,10 +188,10 @@
             this.BtnEliminar.IdleFillColor = System.Drawing.Color.White;
             this.BtnEliminar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnEliminar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnEliminar.Location = new System.Drawing.Point(0, 82);
-            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnEliminar.Location = new System.Drawing.Point(0, 88);
+            this.BtnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(200, 41);
+            this.BtnEliminar.Size = new System.Drawing.Size(150, 44);
             this.BtnEliminar.TabIndex = 2;
             this.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -209,10 +215,10 @@
             this.BtnModificar.IdleFillColor = System.Drawing.Color.White;
             this.BtnModificar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.BtnModificar.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.BtnModificar.Location = new System.Drawing.Point(0, 41);
-            this.BtnModificar.Margin = new System.Windows.Forms.Padding(5);
+            this.BtnModificar.Location = new System.Drawing.Point(0, 44);
+            this.BtnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(200, 41);
+            this.BtnModificar.Size = new System.Drawing.Size(150, 44);
             this.BtnModificar.TabIndex = 1;
             this.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BtnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
@@ -237,9 +243,9 @@
             this.btnAgregar.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnAgregar.IdleLineColor = System.Drawing.Color.SeaGreen;
             this.btnAgregar.Location = new System.Drawing.Point(0, 0);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(200, 41);
+            this.btnAgregar.Size = new System.Drawing.Size(150, 44);
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
@@ -251,38 +257,40 @@
             this.txtFechaIngreso.ForeColor = System.Drawing.Color.White;
             this.txtFechaIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Long;
             this.txtFechaIngreso.FormatCustom = null;
-            this.txtFechaIngreso.Location = new System.Drawing.Point(230, 254);
-            this.txtFechaIngreso.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFechaIngreso.Location = new System.Drawing.Point(184, 206);
             this.txtFechaIngreso.Name = "txtFechaIngreso";
-            this.txtFechaIngreso.Size = new System.Drawing.Size(308, 44);
+            this.txtFechaIngreso.Size = new System.Drawing.Size(231, 36);
             this.txtFechaIngreso.TabIndex = 40;
             this.txtFechaIngreso.Value = new System.DateTime(2018, 6, 10, 14, 35, 14, 387);
             // 
             // txtNombre
             // 
             this.txtNombre.BorderColor = System.Drawing.Color.SeaGreen;
-            this.txtNombre.Location = new System.Drawing.Point(229, 63);
+            this.txtNombre.Location = new System.Drawing.Point(184, 51);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(308, 22);
+            this.txtNombre.Size = new System.Drawing.Size(232, 20);
             this.txtNombre.TabIndex = 41;
             // 
             // txtId
             // 
             this.txtId.BorderColor = System.Drawing.Color.SeaGreen;
             this.txtId.Enabled = false;
-            this.txtId.Location = new System.Drawing.Point(229, 13);
+            this.txtId.Location = new System.Drawing.Point(184, 11);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
-            this.txtId.Size = new System.Drawing.Size(308, 22);
+            this.txtId.Size = new System.Drawing.Size(232, 20);
             this.txtId.TabIndex = 44;
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
             this.bunifuCustomLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(16, 6);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(12, 5);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(39, 29);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(30, 24);
             this.bunifuCustomLabel1.TabIndex = 43;
             this.bunifuCustomLabel1.Text = "Id:";
             // 
@@ -292,10 +300,11 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(230, 130);
+            this.txtCedula.Location = new System.Drawing.Point(184, 106);
+            this.txtCedula.Margin = new System.Windows.Forms.Padding(2);
             this.txtCedula.Mask = "000-0000000-0";
             this.txtCedula.Name = "txtCedula";
-            this.txtCedula.Size = new System.Drawing.Size(308, 22);
+            this.txtCedula.Size = new System.Drawing.Size(232, 20);
             this.txtCedula.TabIndex = 45;
             // 
             // panelForm
@@ -312,20 +321,22 @@
             this.panelForm.Controls.Add(this.bunifuCustomLabel4);
             this.panelForm.Controls.Add(this.bunifuCustomLabel3);
             this.panelForm.Controls.Add(this.bunifuCustomLabel2);
-            this.panelForm.Location = new System.Drawing.Point(20, 18);
+            this.panelForm.Location = new System.Drawing.Point(15, 15);
+            this.panelForm.Margin = new System.Windows.Forms.Padding(2);
             this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(589, 390);
+            this.panelForm.Size = new System.Drawing.Size(442, 317);
             this.panelForm.TabIndex = 0;
             // 
             // CtrlEmpleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panelForm);
             this.Controls.Add(this.panel2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CtrlEmpleados";
-            this.Size = new System.Drawing.Size(874, 452);
+            this.Size = new System.Drawing.Size(656, 367);
             this.Load += new System.EventHandler(this.CtrlEmpleados_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();

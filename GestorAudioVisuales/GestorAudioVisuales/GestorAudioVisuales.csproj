@@ -34,7 +34,7 @@
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>..\..\..\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -42,8 +42,15 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="MetroFramework">
-      <HintPath>..\..\..\..\..\Downloads\ConsoleApp1\GeoLocalizadorApp\bin\Debug\MetroFramework.dll</HintPath>
+    <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Design.1.2.0.3\lib\net40\MetroFramework.Design.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -85,6 +92,54 @@
     <Compile Include="Equipos\CtrlListaEquipos.Designer.cs">
       <DependentUpon>CtrlListaEquipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Equipos\TipoEquipos\CtrlListaTipoEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Equipos\TipoEquipos\CtrlListaTipoEquipos.Designer.cs">
+      <DependentUpon>CtrlListaTipoEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Equipos\TipoEquipos\CtrlTipoEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Equipos\TipoEquipos\CtrlTipoEquipos.Designer.cs">
+      <DependentUpon>CtrlTipoEquipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marcas\CtrlListaMarcas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Marcas\CtrlListaMarcas.Designer.cs">
+      <DependentUpon>CtrlListaMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Marcas\CtrlMarcas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Marcas\CtrlMarcas.Designer.cs">
+      <DependentUpon>CtrlMarcas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\CtrlListaModelos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modelos\CtrlListaModelos.Designer.cs">
+      <DependentUpon>CtrlListaModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\CtrlModelos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modelos\CtrlModelos.Designer.cs">
+      <DependentUpon>CtrlModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rentas\CtrlListaPrestamos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rentas\CtrlListaPrestamos.Designer.cs">
+      <DependentUpon>CtrlListaPrestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rentas\CtrlPrestamos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Rentas\CtrlPrestamos.Designer.cs">
+      <DependentUpon>CtrlPrestamos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +148,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TecnoConexion\CtrlListaTecnoConexion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TecnoConexion\CtrlListaTecnoConexion.Designer.cs">
+      <DependentUpon>CtrlListaTecnoConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TecnoConexion\CtrlTecnoConexion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TecnoConexion\CtrlTecnoConexion.Designer.cs">
+      <DependentUpon>CtrlTecnoConexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\CtrlListaUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usuarios\CtrlListaUsuarios.Designer.cs">
+      <DependentUpon>CtrlListaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios\CtrlUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Usuarios\CtrlUsuarios.Designer.cs">
+      <DependentUpon>CtrlUsuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Empleados\CtrlEmpleados.resx">
       <DependentUpon>CtrlEmpleados.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +189,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Equipos\CtrlListaEquipos.resx">
       <DependentUpon>CtrlListaEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipos\TipoEquipos\CtrlListaTipoEquipos.resx">
+      <DependentUpon>CtrlListaTipoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Equipos\TipoEquipos\CtrlTipoEquipos.resx">
+      <DependentUpon>CtrlTipoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marcas\CtrlListaMarcas.resx">
+      <DependentUpon>CtrlListaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Marcas\CtrlMarcas.resx">
+      <DependentUpon>CtrlMarcas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\CtrlListaModelos.resx">
+      <DependentUpon>CtrlListaModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modelos\CtrlModelos.resx">
+      <DependentUpon>CtrlModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\CtrlListaPrestamos.resx">
+      <DependentUpon>CtrlListaPrestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\CtrlPrestamos.resx">
+      <DependentUpon>CtrlPrestamos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -117,6 +226,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Seguridad\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TecnoConexion\CtrlListaTecnoConexion.resx">
+      <DependentUpon>CtrlListaTecnoConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TecnoConexion\CtrlTecnoConexion.resx">
+      <DependentUpon>CtrlTecnoConexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\CtrlListaUsuarios.resx">
+      <DependentUpon>CtrlListaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\CtrlUsuarios.resx">
+      <DependentUpon>CtrlUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -138,6 +262,9 @@
       <Project>{d5ffa766-fb26-4b7a-9a12-2e5de99cf17e}</Project>
       <Name>DataModel</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MetroFramework.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
